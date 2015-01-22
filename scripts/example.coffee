@@ -8,7 +8,19 @@
 #
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
+# module.exports = (robot) ->
+
+smarf = [
+  "https://i.imgur.com/tfDoMlo.gif",
+  "http://mtv.mtvnimages.com/uri/mgid:file:http:shared:mtv.com/news/wp-content/uploads/2014/11/smarf-1415402128.gif",
+  "https://38.media.tumblr.com/fd6df476fb2f8a260d2c05afdecba19b/tumblr_net3q2Vpq51txq6qwo1_400.gif",
+  "https://38.media.tumblr.com/c9ed046cdc2b4592aa32e5b6e72aeeb0/tumblr_nf1vakwkB91rx2ovqo1_400.gif",
+  "http://s3-ec.buzzfed.com/static/2014-11/14/14/tmp/webdr09/anigif_mobile_50428f7340b07604277898148575205a-2.gif"
+]
+
 module.exports = (robot) ->
+  robot.hear /smarf/i, (msg) ->
+    msg.send msg.random smarf
 
   # robot.hear /badger/i, (msg) ->
   #   msg.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
