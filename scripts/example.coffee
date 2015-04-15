@@ -22,6 +22,10 @@ module.exports = (robot) ->
   robot.hear /smarf/i, (msg) ->
     msg.send msg.random smarf
 
+module.exports = (robot) ->
+  robot.hear /(table)flip/i, (msg) ->
+    msg.send "(╯°□°）╯︵ ┻━┻"
+
 carltons = [
   "http://media.tumblr.com/tumblr_lrzrlymUZA1qbliwr.gif",
   "http://web.archive.org/web/20121119111926/http://3deadmonkeys.com/gallery3/var/albums/random_stuff/Carlton-Dance-GIF.gif",
