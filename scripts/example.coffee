@@ -18,14 +18,6 @@ smarf = [
   "http://s3-ec.buzzfed.com/static/2014-11/14/14/tmp/webdr09/anigif_mobile_50428f7340b07604277898148575205a-2.gif"
 ]
 
-module.exports = (robot) ->
-  robot.hear /smarf/i, (msg) ->
-    msg.send msg.random smarf
-
-module.exports = (robot) ->
-  robot.hear /tableflip/i, (msg) ->
-    msg.send "(╯°□°）╯︵ ┻━┻"
-
 carltons = [
   "http://media.tumblr.com/tumblr_lrzrlymUZA1qbliwr.gif",
   "http://web.archive.org/web/20121119111926/http://3deadmonkeys.com/gallery3/var/albums/random_stuff/Carlton-Dance-GIF.gif",
@@ -35,6 +27,12 @@ carltons = [
 ]
 
 module.exports = (robot) ->
+  robot.hear /smarf/i, (msg) ->
+    msg.send msg.random smarf
+
+  robot.hear /tableflip/i, (msg) ->
+    msg.send "(╯°□°）╯︵ ┻━┻"
+
   robot.hear /dance/i, (msg) ->
     msg.send msg.random carltons
 
