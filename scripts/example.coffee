@@ -30,7 +30,7 @@ module.exports = (robot) ->
   robot.hear /smarf/i, (msg) ->
     msg.send msg.random smarf
 
-  robot.hear /tableflip/i, (msg) ->
+  robot.hear /(table)flip/i, (msg) ->
     msg.send "(╯°□°）╯︵ ┻━┻"
 
   robot.hear /dance/i, (msg) ->
