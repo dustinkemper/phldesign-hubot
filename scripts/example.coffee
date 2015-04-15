@@ -23,7 +23,7 @@ module.exports = (robot) ->
     msg.send msg.random smarf
 
 module.exports = (robot) ->
-  robot.hear /(table)flip/i, (msg) ->
+  robot.hear /tableflip/i, (msg) ->
     msg.send "(╯°□°）╯︵ ┻━┻"
 
 carltons = [
