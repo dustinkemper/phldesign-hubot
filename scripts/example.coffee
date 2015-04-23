@@ -27,6 +27,27 @@ carltons = [
 ]
 
 module.exports = (robot) ->
+
+  twss = (msg, cb) ->
+    cb = animated if typeof animated == 'function'
+    msg.http("http://http://ajax.googleapis.com/ajax/services/search/images/thats-what-she-said")
+      .get() (err, res, body) ->
+        images = JSON.parse body
+        images = images.responseData?.results
+        if images?.length > 0
+          image = msg.random images
+          cb ensureImageExtension image.unescapedUrl
+
+  ensureImageExtension = (url) ->
+    ext = url.split('.').pop()
+    if /(png|jpe?g|gif)/i.test(ext)
+      url
+    else
+      "#{url}#.png"
+
+  robot.hear /(so|too) big/i, (msg) ->
+    msg.send twss
+  
   robot.hear /smarf/i, (msg) ->
     msg.send msg.random smarf
 
