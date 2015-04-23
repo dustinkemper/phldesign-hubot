@@ -45,9 +45,9 @@ module.exports = (robot) ->
     else
       "#{url}#.png"
 
-  robot.hear /(so|too) big/i, (msg) ->
+  robot.hear /blob/i, (msg) ->
     msg.send twss
-  
+
   robot.hear /smarf/i, (msg) ->
     msg.send msg.random smarf
 
