@@ -37,9 +37,9 @@ module.exports = (robot) ->
   robot.hear /dance/i, (msg) ->
     msg.send msg.random carltons
 
-  robot.hear /(so|too) big/i, (msg) ->
-  imageMe msg, "that's what she said", true, (url) ->
-    msg.send url
+  robot.hear /blob/i, (msg) ->
+    imageMe msg, "that's what she said", true, (url) ->
+      msg.send url
 
   imageMe = (msg, query, animated, faces, cb) ->
     cb = animated if typeof animated == 'function'
