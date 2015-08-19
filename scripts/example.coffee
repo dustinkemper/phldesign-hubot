@@ -40,6 +40,7 @@ module.exports = (robot) ->
   robot.hear /(so|too) big|bigger than (I|you) thought/i, (msg) ->
     imageMe msg, "that's what she said", true, (url) ->
       msg.send url
+      msg.send "That's what she said."
 
   imageMe = (msg, query, animated, cb) ->
     cb = animated if typeof animated == 'function'
